@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+    font-family: popp;
+}
+.firstNavBar{
+    font-size: 0.8rem;
+    /* letter-spacing: 0.1em; */
+}
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    color: var(--bs-btn-active-color);
+    background-color: var(--bs-btn-active-bg);
+    border-color: transparent!important;
+}
+.pill:hover{
+    background-color: rgba(0, 0, 255, 0.797)!important;
+    color: white;
+}
+.stateSlect .form-select{
+    /* width: 50%!important; */
+    border: none;
+    font-size: 0.9rem!important;
+}
+.form-select:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: none!important;
+}
+.btnsize{
+    font-size: 0.9rem;
+}
+.bg-blue{
+    background-color: #18283F!important;
+    color: white!important;
+}
+.hoverwhite:hover a {
+    background-color: white;
+   color: #18283F!important;
+   font-weight: 400;
+}
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: start;
+    padding: 0;
+    margin-right: 0%;
+    margin-bottom: 1rem;
+    margin-left: 6%;
+}
+.carousel-indicators [data-bs-target] {
+    height: 19px;
+    width: 19px;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    cursor: pointer;
+    background-color: #949191;
+    border-radius: 34%!important;  
+}
+.Categoryheader{
+    position: relative;
+}
+.rowwidth{
+    height: 20px!important;
+}
+.fsSmall{
+    font-size: 14px;
+}
+.card:hover{
+    box-shadow: 9px 9px 14px -5px rgba(0,0,0,0.75);
+    cursor: pointer;
+}
+.btn-prime{
+    background-color: #17283F!important;
+    color: white;
+}
+.top12{
+    top: 26px;
+    z-index: 2;
+}
+.zindex{
+    z-index: 2;
+}.nav-tabs .nav-link.active {
+    color: var(--bs-nav-tabs-link-active-color);
+    background-color: var(--bs-nav-tabs-link-active-bg);
+    border-color: var(--bs-nav-tabs-link-active-border-color);
+    border-bottom: 2px solid green;
+    border-left: none!important;
+    border-right: none!important;
+    color: green!important;
+}
+.brandright,.brandleft{
+    filter: brightness(0.5)!important;
+}

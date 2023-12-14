@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaturePoot</title>
+    <!-- boostarp cdn link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- style link -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="container-fluid  ">
+        <!-- top nav bar  -->
+        <div class="container position-sticky top-0 bg-white zindex">
+            <div class="row">
+                <div class="col-2 offset-3">
+                    <ul class="d-flex gap-3 pt-2 p-0 firstNavBar">
+                        <li class="list-unstyled border-end pe-2">Store Locator </li>
+                        <li class="list-unstyled border-end pe-2">Contact US</li>
+                    </ul>
+
+                </div>
+                <div class="col-3 stateSlect d-flex">
+                    <div> <select class="form-select pt-2" aria-label="Default select example ">
+                            <option selected>Mumbai</option>
+                            <option value="1">Delhi</option>
+                            <option value="2">Kolkata</option>
+                            <option value="3">Thane</option>
+                        </select></div>
+                    <div>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btnsize" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Enter PinCode
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5 " id="exampleModalLabel">Enter Your Pin code
+                                        </h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Recipient's username"
+                                                aria-label="Recipient's username" aria-describedby="button-addon2">
+                                            <button class="btn btn-outline-secondary" type="button"
+                                                id="button-addon2">Submit</button>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-prime">Save changes</button>
+                                </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal End-->
+                    </div>
+
+                </div>
+                <div class="col-2 offset-2">
+                    <ul class="pt-1">
+                        <a href="#" class="text-decoration-none text-black fs-6">
+                            <li class="list-unstyled">Login/Register</li>
+                        </a>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <!-- top nav bar  -->
+        <!-- secondNav  -->
+        <div class="container position-sticky top12 bg-white">
+            <div class="row align-items-center">
+                <div class="col-3 logo">
+                    <img src="./assest/images/logosnew.png" alt="">
+                </div>
+                <div class="col-7 pt-4">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Start Shoping"
+                            aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <span class="input-group-text" id="basic-addon2"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAotJREFUSEvllkuojVEYhp8j15QYUMdlJPeQg+QeEykDI7coIU5kgIGYGaEwMCARQ7klBgwkJXIXEkXuuU9IIUm+N99/Wv69//N/HXt3BtZk7/b+3vdda32XdzXQTquhnXSJCHcEJgJDgV7AI+A68OZfNt2acD9gM7AY6FFF5CqwEzjelg0UCS8CDgDdAqRngfnAl0BsS0g14eUuqqBfwGHgNHAHeGffm4DJwCpggDPdBKYB36LieeHRwG2gA/ABmAPcKCDrChwEFvr/ew2zuq3CZ4DZDp4KXCohUuEpZgLw025nCPA0Ip6euA/w3kH7rWpXRgiAMX5LClcxbo3gUuEFnk/hJgFXIgQecx8YAVwAZkZwqfB6bw/hugNfIwQeow5QUb4F+kZwqfBGYJuDuti1/YgQeIxwwn8GekZwqfBS4JCDBgOPIwQecwSY5+lRmkpXKjwKuOuINcCeUvSfgE5elBqn+6zXmyO4fB+/suHR3/KlT536e4BkA7DD48JFmRdeC+x2El37shLhscBlayHVxDG/7sBeqXCnzj4Qxjv6lBXMOuBZjk1CK2yWb/cO0PAYBDwPqVIpLFxv4DwwMiFRn97zXI4DtDGNTC3NZ+X5hPFtMcN4GBEvcie50i4/lcZi0dKGlpgzKc+yTy2ZyibgRWsbKHsIyH1EOMuLTb6sh8A54Chwy8mHWX4fJEJ6JMitnhSJlwlHbi2LOWnWOTcBaIPT3UoreGoprPaTU6lGsqW2nGLd8TKvXEthcSs1MoqBiZCue4bPhpafay2ciV+zKdaYiL92+/yY/VYPYXGrpzVYsmuXR8ur63rijHy4efNFfxjoNfrXqteJMxFZ5KdqrVFv4cJ2/P+EfwPso2Yfp6I9kgAAAABJRU5ErkJggg==" /></span>
+                    </div>
+                </div>
+                <div class="col-2 d-flex ps-5 gap-4 ">
+                    <div><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAg1JREFUSEvFlrtLHUEUhz8hEIvEwiIGH6WiXSq7aBQFhUAQVKwCChJIZ7TxPxDMw04QTUgKISakEB+NhZhY2Ak2GtKE+CABC1GUgJDsD+bCMu7u7Mz1MbDsvbPnzHfmzJlzTgk3NEpuiEsx4E5j9HKI8aHgh8CaAer3N194KHgJKOx4EXh8HeA6YCcG+gc0WHNOO0J2/B54aq38Dhhw0mICvuBK4Cdwy4KcA1XAn7xwX/BLYDhl8TFg9CrAd4E9QO+kcQxUAGd54PaOHwD1xm1yq9ynd7V533Ys+hfYB34BB8ZQGatHAblZ0I+De6Po/JjH2iJkeoDP0o+DO4CgLJTTEF27ZuCrDdb/PmDWMijnupliOoJuYCHJ1YW5y4Yr6JTl1uOmpV2ny4IfAi3Alu2PrHtcLFyR3Qr8SDoEVwIJhQvWZK5U4uG7wEqNOqNSzwh7A7zI0nGBG6PA2PCESnzbVKxUVRdYVr8KAEulBthN03WBvwBdgeDnUe6eDAX/Bu6lKJ+Y+Tsp3+eBJyHgWuB7iuJqrBn4ADxKkDsFyqNSqax1YWS5Wh3FjKWhCB+JKtWUNf8MGE8ome3Aii/4bdRt9MeUtICMUWJIGgom6bTFPr5OaxyydjwHqIwdRc8QoL4qz5CxE0AZ8AlQufVy9f2ogA+aXaiQ+ww1DvLOtGkMvMA+IG9Z1z32XjCvwn8R3FIfWJsPkAAAAABJRU5ErkJggg==" />
+                    </div>
+                    <div><button type="button" class="btn  position-relative">
+
+                            <span><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAgdJREFUSEvN1kuoTXEUx/HPlYFHpEQyIhnIxEQiEwYykMHFhJnyLAMDxUCkPAYG0i2RMnJH9w6NhIEoxUAJA4/yiGIgMvAIZ93+u3bbuef893k4Vp3B2Wf91/e/fuuxz5AB2dCAuP4L8CLEJ+wLHvRTjXLGx3GsBHuGjXjejwu0AgfvIVb0G1yWehgHEnAt7vQaPllzzcV7TMUodvwrcHCuYju+YzO+dQl/hRdFjFbjFBLf7hJWPb4V4/Gw3Rw/wvIewnfiSg54Ny4m8Clc7+ASJ7EGPzEPn3LAM/AOsxN0Q03wTHzENIxhW06NC5/zabR+Nxpuac2FUlZsE67VAS9BbLGwczhYI+u7WI0PWIBfdcDhewPr8RnzM0drcWl8zuJQ+cLturrw3ZJqFN934XJG1tGMR5LfMjztBDylAXyb5HqcMWKR0BssxP1GbVdWL5qbcZw7ihMpQMzjyxZZx+yPpN/340I34GiO12l/Zyg94fIj9cTE7HYidXHmUqpxLjiWz95mznWkjvNR66jX9Azy11TfmP+/rC44AsRSmJPqFn+RqjYL+9JqDIWaWl3waRxOkW6l2a4Gvol16eGZ0kh1VeNy0JAwpK9abKciocku1/a1WA1a3r0h454m4Gio8AuL35vKXVfqCBZbKN5W91o02Kq0Xp/0qsYZzZzn0knGeZHbeA0M/AffmVMfIK6tVQAAAABJRU5ErkJggg==" /></span>
+                        </button></div>
+                </div>
+            </div>
+        </div>
+        <!-- secondNav  -->
+        <!-- category list  -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12 bg-blue">
+                    <ul class="d-flex align-items-center justify-content-around mb-0 p-0">
+                        <li class="list-unstyled"><!-- Example single danger button -->
+                            <div class="btn-group">
+                                <button type="button text-uppercase" class="btn text-white  dropdown-toggle"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Shop By Category
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item text-uppercase" href="#">Action</a></li>
+                                    <li><a class="dropdown-item text-uppercase" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item text-uppercase" href="#">Something else here</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-unstyled text-uppercase hoverwhite"><a href="#"
+                                class="text-decoration-none text-white ">Festive
+                                Gifting</a></li>
+                        <li class="list-unstyled text-uppercase hoverwhite"><a href="#"
+                                class="text-decoration-none text-white">Divine
+                                Delights</a></li>
+                        <li class="list-unstyled text-uppercase hoverwhite"><a href="#"
+                                class="text-decoration-none text-white">Bakery
+                                Shop</a>
+                        </li>
+                        <li class="list-unstyled text-uppercase hoverwhite"><a href="#"
+                                class="text-decoration-none text-white">Blog</a></li>
+                        <li class="list-unstyled text-uppercase hoverwhite"><a href="#"
+                                class="text-decoration-none text-white">Offers</a>
+                        </li>
+                        <li class="list-unstyled text-uppercase hoverwhite"><a href="#"
+                                class="text-decoration-none text-white">Cheese
+                                Store</a>
+                        </li>
+                        <li class="list-unstyled text-uppercase hoverwhite"><a href="#"
+                                class="text-decoration-none text-white">European
+                                Union</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- category list end -->
+        <!-- silderbanner start   -->
+        <div class="container">
+            <div class="row ">
+                <div class="col-12 p-0">
+                    <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./assest/images/first.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./assest/images/second.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./assest/images/third.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./assest/images/fouth.jpeg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- silderbanner end  -->
+        <!-- section start  -->
+        <div class="container">
+            <div class="row mt-3  ">
+                <div class="col-4 p-0 "><a href="#"><img src="./assest/images/basket.png"
+                            class="img-fluid rounded shadow p-3 mb-5 bg-body-tertiary" alt="basket"></a>
+                </div>
+                <div class="col-4 p-0"><a href="#"><img src="./assest/images/offer.jpg"
+                            class="img-fluid rounded shadow p-3 mb-5 bg-body-tertiary" alt="offer"></a>
+                </div>
+                <div class="col-4  p-0"><a href="#"><img src="./assest/images/gift.jpeg"
+                            class="img-fluid rounded shadow p-3 mb-5 bg-body-tertiary" alt="gift"></a>
+                </div>
+            </div>
+        </div>
+        <!-- section end  -->
+        <!-- SHOP BY CATEGORY start -->
+        <div class="container ">
+            <div class="row">
+                <div class="col-4 border-bottom rowwidth"></div>
+                <div class="col-4 text-center">
+                    <h2>SHOP BY CATEGORY</h2>
+                </div>
+                <div class="col-4 border-bottom rowwidth"></div>
+            </div>
+            <div class="row py-3">
+                <div class="col-2">
+                    <img class="img-fluid" src="./assest/images/Exotic+Fruits.png" alt="">
+                    <a href="#" class="d-flex justify-content-center text-decoration-none text-black fsSmall">Studio</a>
+                    </img>
+                </div>
+                <div class="col-2">
+                    <img class="img-fluid" src="./assest/images/Meats,+Poultry+&+Seafood.png" alt="">
+                    <a href="#" class="d-flex justify-content-center text-decoration-none text-black fsSmall">Meat,
+                        Poultry
+                    </a>
+                    </img>
+                </div>
+                <div class="col-2">
+                    <img class="img-fluid" src="./assest/images/Bakery+&+Dairy.png" alt="">
+                    <a href="#" class="d-flex justify-content-center text-decoration-none text-black fsSmall">Dairy</a>
+                    </img>
+                </div>
+                <div class="col-2">
+                    <img class="img-fluid" src="./assest/images/Fresh+Artisanal+Breads.png" alt="">
+                    <a href="#" class="d-flex justify-content-center text-decoration-none text-black fsSmall">Artisanal
+                    </a>
+                    </img>
+                </div>
+                <div class="col-2">
+                    <img class="img-fluid" src="./assest/images/Chocolates,+Confectionery.png" alt="">
+                    <a href="#"
+                        class="d-flex justify-content-center text-decoration-none text-black fsSmall">Chocolates,
+                        Confectionery</a>
+                    </img>
+                </div>
+                <div class="col-2">
+                    <img class="img-fluid" src="./assest/images/Delicatessen+&+Cheese.png" alt="">
+                    <a href="#"
+                        class="d-flex justify-content-center text-decoration-none text-black fsSmall">Delicatessen
+                        &
+                        Cheese</a>
+                    </img>
+                </div>
+            </div>
+            <div class="row py-3">
+                <div class="col-2">
+                    <img class="img-fluid" src="./assest/images/The+Gift+Studio.png" alt="">
+                    <a href="#" class="d-flex justify-content-center text-decoration-none text-black fsSmall">The Gift
+                        Studio</a>
+                    </img>
+                </div>
+                <div class="col-2">
+                    <img class="img-fluid" src="./assest/images/Breakfast,+Jams,+Honey+&+Spreads.png" alt="">
+                    <a href="#" class="d-flex justify-content-center text-decoration-none text-black fsSmall">Breakfast,
+                        Jams, Honey & Spreads
+                    </a>
+                    </img>
+                </div>
+                <div class="col-2">
+                    <img class="img-fluid" src="./assest/images/Health+&+Wellness.png" alt="">
+                    <a href="#" class="d-flex justify-content-center text-decoration-none text-black fsSmall">Health &
+                        Wellness</a>
+                    </img>
+                </div>
+                <div class="col-2">
+                    <img class="img-fluid" src="./assest/images/Grocery.png" alt="">
+                    <a href="#" class="d-flex justify-content-center text-decoration-none text-black fsSmall">Grocery
+                    </a>
+                    </img>
+                </div>
+                <div class="col-2">
+                    <img class="img-fluid" src="./assest/images/Beverages.png" alt="">
+                    <a href="#"
+                        class="d-flex justify-content-center text-decoration-none text-black fsSmall">Beverages</a>
+                    </img>
+                </div>
+                <div class="col-2">
+                    <img class="img-fluid" src="./assest/images/World+Foods.png" alt="">
+                    <a href="#" class="d-flex justify-content-center text-decoration-none text-black fsSmall">World
+                        Foods</a>
+                    </img>
+                </div>
+            </div>
+
+        </div>
+        <!-- SHOP BY CATEGORY end -->
+        <!-- WHAT'S COOKING start  -->
+        <div class="container ">
+
+            <div class="row py-5">
+                <div class="col-4 border-bottom rowwidth"></div>
+                <div class="col-4 text-center">
+                    <h2>WHAT'S COOKING</h2>
+                </div>
+                <div class="col-4 border-bottom rowwidth"></div>
+            </div>
+            <div class="row py-5">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="/assest/images/WhatsCooking-1.jpg" class="img-thumbnail" alt="First">
+                                </div>
+                                <div class="col-3">
+                                    <img src="./assest/images/WhatsCooking-2.jpg" class="img-thumbnail" alt="Second">
+                                </div>
+                                <div class="col-3">
+                                    <img src="./assest/images/WhatsCooking-3.jpg" class="img-thumbnail" alt="THird">
+                                </div>
+                                <div class="col-3">
+                                    <img src="./assest/images/WhatsCooking-4.jpg" class="img-thumbnail" alt="Fourth">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="./assest/images/WhatsCooking-5.jpg" class="img-thumbnail" alt="First">
+                                </div>
+                                <div class="col-3">
+                                    <img src="./assest/images/WhatsCooking-6.jpg" class="img-thumbnail" alt="Second">
+                                </div>
+                                <div class="col-3">
+                                    <img src="./assest/images/WhatsCooking-7.jpg" class="img-thumbnail" alt="THird">
+                                </div>
+                                <div class="col-3">
+                                    <img src="./assest/images/WhatsCooking-8.jpg" class="img-thumbnail" alt="Fourth">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="./assest/images/WhatsCooking-9.jpg" class="img-thumbnail" alt="First">
+                                </div>
+                                <div class="col-3">
+                                    <img src="./assest/images/WhatsCooking-10.jpg" class="img-thumbnail" alt="Second">
+                                </div>
+                                <div class="col-3">
+                                    <img src="./assest/images/WhatsCooking-5.jpg" class="img-thumbnail" alt="THird">
+                                </div>
+                                <div class="col-3">
+                                    <img src="./assest/images/WhatsCooking-10.jpg" class="img-thumbnail" alt="Fourth">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <!-- WHAT'S COOKING end  / -->
+        <!-- WHAT'S TRENDING  -->
+        <div class="container">
+            <div class="row py-3">
+                <div class="col-4 border-bottom rowwidth"></div>
+                <div class="col-4 text-center">
+                    <h2>WHAT'S TRENDING</h2>
+                </div>
+                <div class="col-4 border-bottom rowwidth"></div>
+            </div>
+            <div class="row  ">
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-3 pb-2">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+
+                                            <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                            <p class="text-center">1pc</p>
+                                            <div class="d-flex justify-content-around">
+
+                                                <button class="btn ">MRP ₹825</button>
+                                                <button class="btn btn-prime"><i
+                                                        class="fa-solid fa-cart-shopping"></i></span>
+                                                    ADD</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3 pb-2">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="./assest/images/amul.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+
+                                            <p class="card-text">Amul Taaza Toned Uht Milk 1L Tetra ..</p>
+                                            <p class="text-center">1pc</p>
+                                            <div class="d-flex justify-content-around">
+                                                <button class="btn ">MRP ₹825</button>
+                                                <button class="btn btn-prime"><i
+                                                        class="fa-solid fa-cart-shopping"></i></span>
+                                                    ADD</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3 pb-2">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="./assest/images/ram.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <p class="card-text">Raw Pressery Orange Juice1l Tetra P..</p>
+                                            <p class="text-center">1pc</p>
+                                            <div class="d-flex justify-content-around">
+                                                <button class="btn ">MRP ₹825</button>
+                                                <button class="btn btn-prime"><i
+                                                        class="fa-solid fa-cart-shopping"></i></span>
+                                                    ADD</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3 pb-2">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="./assest/images/neutella.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <p class="card-text">Nutella Hazelnut Spread 350G Jar</p>
+                                            <p class="text-center">1pc</p>
+                                            <div class="d-flex justify-content-around">
+                                                <button class="btn ">MRP ₹825</button>
+                                                <button class="btn btn-prime"><i
+                                                        class="fa-solid fa-cart-shopping"></i></span>
+                                                    ADD</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-3 pb-2">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+
+                                            <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                            <p class="text-center">1pc</p>
+                                            <div class="d-flex justify-content-around">
+
+                                                <button class="btn ">MRP ₹825</button>
+                                                <button class="btn btn-prime"><i
+                                                        class="fa-solid fa-cart-shopping"></i></span>
+                                                    ADD</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3 pb-2">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="./assest/images/amul.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+
+                                            <p class="card-text">Amul Taaza Toned Uht Milk 1L Tetra ..</p>
+                                            <p class="text-center">1pc</p>
+                                            <div class="d-flex justify-content-around">
+                                                <button class="btn ">MRP ₹825</button>
+                                                <button class="btn btn-prime"><i
+                                                        class="fa-solid fa-cart-shopping"></i></span>
+                                                    ADD</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3 pb-2">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="./assest/images/ram.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <p class="card-text">Raw Pressery Orange Juice1l Tetra P..</p>
+                                            <p class="text-center">1pc</p>
+                                            <div class="d-flex justify-content-around">
+                                                <button class="btn ">MRP ₹825</button>
+                                                <button class="btn btn-prime"><i
+                                                        class="fa-solid fa-cart-shopping"></i></span>
+                                                    ADD</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3 pb-2">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="./assest/images/neutella.jpg" class="card-img-top" alt="...">
+                                        <div
+                                            class="card-body d-flex justify-content-center flex-column align-items-center">
+
+                                            <p class="card-text">Nutella Hazelnut Spread 350G Jar</p>
+                                            <p class="text-center">1pc</p>
+                                            <div class="d-flex justify-content-around">
+                                                <button class="btn ">MRP ₹825</button>
+                                                <button class="btn btn-prime"><i
+                                                        class="fa-solid fa-cart-shopping"></i></span>
+                                                    ADD</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-3 pb-2">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+
+                                            <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                            <p class="text-center">1pc</p>
+                                            <div class="d-flex justify-content-around">
+
+                                                <button class="btn ">MRP ₹825</button>
+                                                <button class="btn btn-prime"><i
+                                                        class="fa-solid fa-cart-shopping"></i></span>
+                                                    ADD</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3 pb-2">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="./assest/images/amul.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+
+                                            <p class="card-text">Amul Taaza Toned Uht Milk 1L Tetra ..</p>
+                                            <p class="text-center">1pc</p>
+                                            <div class="d-flex justify-content-around">
+                                                <button class="btn ">MRP ₹825</button>
+                                                <button class="btn btn-prime"><i
+                                                        class="fa-solid fa-cart-shopping"></i></span>
+                                                    ADD</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3 pb-2">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="./assest/images/ram.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <p class="card-text">Raw Pressery Orange Juice1l Tetra P..</p>
+                                            <p class="text-center">1pc</p>
+                                            <div class="d-flex justify-content-around">
+                                                <button class="btn ">MRP ₹825</button>
+                                                <button class="btn btn-prime"><i
+                                                        class="fa-solid fa-cart-shopping"></i></span>
+                                                    ADD</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3 pb-2">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="./assest/images/neutella.jpg" class="card-img-top" alt="...">
+                                        <div
+                                            class="card-body d-flex justify-content-center flex-column align-items-center">
+
+                                            <p class="card-text">Nutella Hazelnut Spread 350G Jar</p>
+                                            <p class="text-center">1pc</p>
+                                            <div class="d-flex justify-content-around">
+                                                <button class="btn ">MRP ₹825</button>
+                                                <button class="btn btn-prime"><i
+                                                        class="fa-solid fa-cart-shopping"></i></span>
+                                                    ADD</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- WHAT'S TRENDING -->
+        <!-- DISCOVER MORE start -->
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-4 border-bottom rowwidth"></div>
+                <div class="col-4 text-center">
+                    <h2>DISCOVER MORE</h2>
+                </div>
+                <div class="col-4 border-bottom rowwidth"></div>
+            </div>
+            <div class="row">
+
+                <ul class="nav nav-tabs bg-secondary-subtle  p-0 mb-3" id="myTab" role="tablist">
+                    <li class="nav-item w-25" role="presentation">
+                        <button class="nav-link active text-black w-100" id="home-tab" data-bs-toggle="tab"
+                            data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+                            aria-selected="true">Home</button>
+                    </li>
+                    <li class="nav-item w-25" role="presentation">
+                        <button class="nav-link w-100 text-black" id="profile-tab" data-bs-toggle="tab"
+                            data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane"
+                            aria-selected="false">Profile</button>
+                    </li>
+                    <li class="nav-item w-25" role="presentation">
+                        <button class="nav-link w-100 text-black" id="contact-tab" data-bs-toggle="tab"
+                            data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane"
+                            aria-selected="false">Contact</button>
+                    </li>
+                    <li class="nav-item w-25" role="presentation">
+                        <button class="nav-link w-100 text-black" id="Gift-tab" data-bs-toggle="tab"
+                            data-bs-target="#Gift" type="button" role="tab" aria-controls="Gift"
+                            aria-selected="false">Gift</button>
+                    </li>
+
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                        tabindex="0">
+                        <div class="row">
+                            <div class="col-3 pb-2">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+
+                                        <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                        <p class="text-center">1pc</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn ">MRP <del>₹825</del></button>
+                                            <span class="pt-2 border-1 ">₹140</span>
+                                            <button class="btn btn-prime"><i
+                                                    class="fa-solid fa-cart-shopping"></i></span>
+                                                ADD</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 pb-2">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+
+                                        <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                        <p class="text-center">1pc</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn ">MRP <del>₹825</del></button>
+                                            <span class="pt-2">₹140</span>
+                                            <button class="btn btn-prime"><i
+                                                    class="fa-solid fa-cart-shopping"></i></span>
+                                                ADD</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 pb-2">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+
+                                        <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                        <p class="text-center">1pc</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn ">MRP <del>₹825</del></button>
+                                            <span class="pt-2">₹140</span>
+                                            <button class="btn btn-prime"><i
+                                                    class="fa-solid fa-cart-shopping"></i></span>
+                                                ADD</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 pb-2">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+
+                                        <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                        <p class="text-center">1pc</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn ">MRP <del>₹825</del></button>
+                                            <span class="pt-2">₹140</span>
+                                            <button class="btn btn-prime"><i
+                                                    class="fa-solid fa-cart-shopping"></i></span>
+                                                ADD</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                        tabindex="0">
+                        <div class="row">
+                            <div class="col-3 pb-2 p-0">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+
+                                        <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                        <p class="text-center">1pc</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn ">MRP <del>₹825</del></button>
+                                            <span class="pt-2">₹140</span>
+                                            <button class="btn btn-prime"><i
+                                                    class="fa-solid fa-cart-shopping"></i></span>
+                                                ADD</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 pb-2 p-0">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+
+                                        <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                        <p class="text-center">1pc</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn ">MRP <del>₹825</del></button>
+                                            <span class="pt-2">₹140</span>
+                                            <button class="btn btn-prime"><i
+                                                    class="fa-solid fa-cart-shopping"></i></span>
+                                                ADD</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 pb-2 p-0">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+
+                                        <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                        <p class="text-center">1pc</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn ">MRP <del>₹825</del></button>
+                                            <span class="pt-2">₹140</span>
+                                            <button class="btn btn-prime"><i
+                                                    class="fa-solid fa-cart-shopping"></i></span>
+                                                ADD</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 pb-2 p-0">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+
+                                        <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                        <p class="text-center">1pc</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn ">MRP <del>₹825</del></button>
+                                            <span class="pt-2">₹140</span>
+                                            <button class="btn btn-prime"><i
+                                                    class="fa-solid fa-cart-shopping"></i></span>
+                                                ADD</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
+                        tabindex="0">
+                        <div class="row">
+                            <div class="col-3 pb-2 p-0">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+
+                                        <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                        <p class="text-center">1pc</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn ">MRP <del>₹825</del></button>
+                                            <span class="pt-2">₹140</span>
+                                            <button class="btn btn-prime"><i
+                                                    class="fa-solid fa-cart-shopping"></i></span>
+                                                ADD</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 pb-2 p-0">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+
+                                        <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                        <p class="text-center">1pc</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn ">MRP <del>₹825</del></button>
+                                            <span class="pt-2">₹140</span>
+                                            <button class="btn btn-prime"><i
+                                                    class="fa-solid fa-cart-shopping"></i></span>
+                                                ADD</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 pb-2 p-0">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+
+                                        <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                        <p class="text-center">1pc</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn ">MRP <del>₹825</del></button>
+                                            <span class="pt-2">₹140</span>
+                                            <button class="btn btn-prime"><i
+                                                    class="fa-solid fa-cart-shopping"></i></span>
+                                                ADD</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 pb-2 p-0">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+
+                                        <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                        <p class="text-center">1pc</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn ">MRP <del>₹825</del></button>
+                                            <span class="pt-2">₹140</span>
+                                            <button class="btn btn-prime"><i
+                                                    class="fa-solid fa-cart-shopping"></i></span>
+                                                ADD</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="Gift" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
+                        <div class="row">
+                            <div class="col-3 pb-2 p-0">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+
+                                        <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                        <p class="text-center">1pc</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn ">MRP <del>₹825</del></button>
+                                            <span class="pt-2">₹140</span>
+                                            <button class="btn btn-prime"><i
+                                                    class="fa-solid fa-cart-shopping"></i></span>
+                                                ADD</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 pb-2 p-0">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+
+                                        <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                        <p class="text-center">1pc</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn ">MRP <del>₹825</del></button>
+                                            <span class="pt-2">₹140</span>
+                                            <button class="btn btn-prime"><i
+                                                    class="fa-solid fa-cart-shopping"></i></span>
+                                                ADD</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 pb-2 p-0">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+
+                                        <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                        <p class="text-center">1pc</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn ">MRP <del>₹825</del></button>
+                                            <span class="pt-2">₹140</span>
+                                            <button class="btn btn-prime"><i
+                                                    class="fa-solid fa-cart-shopping"></i></span>
+                                                ADD</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 pb-2 p-0">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./assest/images/cheetos.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+
+                                        <p class="card-text">Cheetos Corn Puffs Crunchy Chips 22..</p>
+                                        <p class="text-center">1pc</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn ">MRP <del>₹825</del></button>
+                                            <span class="pt-2">₹140</span>
+                                            <button class="btn btn-prime"><i
+                                                    class="fa-solid fa-cart-shopping"></i></span>
+                                                ADD</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- DISCOVER MORE end  -->
+        <div class="container py-5">
+            <div class="row">
+                <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="./assest/images/barilla.jpg" alt="">
+                                </div>
+                                <div class="col-3">
+                                    <img src="./assest/images/ceres.jpg" alt="">
+                                </div>
+                                <div class="col-3">
+                                    <img src="./assest/images/lindt.jpg" alt="">
+                                </div>
+                                <div class="col-3">
+                                    <img src="./assest/images/silk.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="./assest/images/healthy.jpg" alt="">
+                                </div>
+                                <div class="col-3">
+                                    <img src="./assest/images/cambay-tiger.jpg" alt="">
+                                </div>
+                                <div class="col-3">
+                                    <img src="./assest/images/real-thai.jpg" alt="">
+                                </div>
+                                <div class="col-3">
+                                    <img src="./assest/images/davidoff-cafe.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon brandleft" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon brandright" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- SHOP BY WORLD BRANDS start -->
+        <!-- footer start  -->
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="row">
+                        <div class="col-8">
+                            <h5 class="fs-6">DOWNLOAD THE APP</h5>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <a href="#"><img src="./assest/images/get-it-on-google-play.svg" class="img-fluid" alt=""></a>
+                    </div>
+                    <div class="col-7 pt-3">
+                        <a href="#"><img src="./assest/images/available-on-the-app-store.svg" class="img-fluid"
+                                alt=""></a>
+                    </div>
+                </div>
+                <div class="col-4 p-0">
+                    <div class="row">
+                        <div class="col-4 p-0">
+                            <h6>ABOUT US </h6>
+                            <ul class="p-0">
+                                <li class="list-unstyled"><a href="#"
+                                        class="text-decoration-none text-black-50 fs-6 ">About
+                                        Us</a></li>
+                                <li class="list-unstyled"><a href="#"
+                                        class="text-decoration-none text-black-50 fs-6">Our
+                                        Vision & Purpose</a></li>
+                                <li class="list-unstyled"><a href="#"
+                                        class="text-decoration-none text-black-50 fs-6">Quality standards</a></li>
+                                <li class="list-unstyled"><a href="#"
+                                        class="text-decoration-none text-black-50 fs-6">Awards</a></li>
+                                <li class="list-unstyled"><a href="#"
+                                        class="text-decoration-none text-black-50 fs-6">FAQs</a></li>
+                                <li class="list-unstyled"><a href="#"
+                                        class="text-decoration-none text-black-50 fs-6">Available Delivery Slot</a></li>
+                                <li class="list-unstyled"><a href="#"
+                                        class="text-decoration-none text-black-50 fs-6">Vendor Connect</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-4 p-0">
+                            <h6>NEWS & MEDIA</h6>
+                            <ul class="p-0">
+                                <li class="list-unstyled"><a href="#"
+                                        class="text-decoration-none text-black-50 fs-6 ">Press releases
+                                        Us</a></li>
+                                <li class="list-unstyled"><a href="#"
+                                        class="text-decoration-none text-black-50 fs-6">Newsletters</a></li>
+                                <li class="list-unstyled"><a href="#" class="text-decoration-none text-black-50 fs-6">
+                                        Events</a></li>
+                                <li class="list-unstyled"><a href="#"
+                                        class="text-decoration-none text-black-50 fs-6">Photo gallery</a></li>
+                                <li class="list-unstyled"><a href="#"
+                                        class="text-decoration-none text-black-50 fs-6">Recipes</a></li>
+                                <li class="list-unstyled"><a href="#"
+                                        class="text-decoration-none text-black-50 fs-6">NBTV</a></li>
+                                <li class="list-unstyled"><a href="#" class="text-decoration-none text-black-50 fs-6">
+                                        Our Virtual Store </a></li>
+                            </ul>
+                        </div>
+                        <div class="col-4 p-0">
+                            <h6>OUR POLICIES</h6>
+                            <ul class="p-0">
+                                <li class="list-unstyled"><a href="#"
+                                        class="text-decoration-none text-black-50 fs-6 ">Privacy policy</a></li>
+                                <li class="list-unstyled"><a href="#" class="text-decoration-none text-black-50 fs-6">
+                                        Payment policy</a></li>
+                                <li class="list-unstyled"><a href="#" class="text-decoration-none text-black-50 fs-6">
+                                        Disclaimer</a></li>
+                                <li class="list-unstyled"><a href="#"
+                                        class="text-decoration-none text-black-50 fs-6">Grievance Officer</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="col-4 p-0">
+                            <h6>CAREERS</h6>
+                            <ul class="p-0">
+                                <li class="list-unstyled"><a href="#" class="text-decoration-none text-black-50 fs-6 ">
+                                        Work with us</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <h6>SIGN UP TO STAY UPDATED</h6>
+                    <div class="pt-4">
+                        <input type="text" class="form-control" placeholder="ENTER YOUR EMAIL ADDRESS">
+                        <button class="btn mt-3 bg-blue">SUBSCRIBE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer end -->
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script src="Script.js"></script>
+</body>
+
+</html>
